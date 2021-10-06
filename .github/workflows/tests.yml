@@ -161,9 +161,9 @@ jobs:
            source .env/bin/activate && \
            pip install -U wheel setuptools pip && \
            pip install tox codecov && \
-           tox -e py38 . 2> output.txt && \
+           tox -e py38 >> test.txt && \
            deactivate'
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: output.txt
+        path: test.txt
